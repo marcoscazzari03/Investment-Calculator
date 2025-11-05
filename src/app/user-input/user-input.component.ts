@@ -9,10 +9,10 @@ import { InvesmentService } from '../investment.service';
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
-  enteredInitialInvestment = signal('0');
-  enteredAnnualInvestment = signal('0');
-  enteredExpectedReturn = signal('5');
-  enteredDuration = signal('10');
+  enteredInitialInvestment = signal('');
+  enteredAnnualInvestment = signal('');
+  enteredExpectedReturn = signal('');
+  enteredDuration = signal('');
 
   constructor(private investmentService: InvesmentService){}
 
@@ -23,9 +23,9 @@ export class UserInputComponent {
       expectedReturn: + this.enteredExpectedReturn(),
       annualInvestment: + this.enteredAnnualInvestment(),
     });
-    this.enteredInitialInvestment.set('0');
-    this.enteredAnnualInvestment.set('0');
-    this.enteredExpectedReturn.set('5');
-    this.enteredDuration.set('10');
+    this.enteredInitialInvestment.set('');
+    this.enteredAnnualInvestment.set('');
+    this.enteredExpectedReturn.set('');
+    this.enteredDuration.set('');
   }
 }
